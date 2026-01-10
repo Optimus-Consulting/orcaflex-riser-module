@@ -3,10 +3,12 @@ import { CameraView } from '../../three';
 export declare class ThreeViewComponent implements OnInit, AfterViewInit, OnDestroy {
     canvasRef: ElementRef<HTMLCanvasElement>;
     containerRef: ElementRef<HTMLDivElement>;
+    viewHelperCanvasRef: ElementRef<HTMLCanvasElement>;
     private modelState;
     private sceneManager;
     private resizeObserver;
     private viewHelper;
+    private viewHelperRenderer;
     private clock;
     private globalCoordSystem;
     private vesselCoordSystems;
@@ -28,17 +30,17 @@ export declare class ThreeViewComponent implements OnInit, AfterViewInit, OnDest
     ngAfterViewInit(): void;
     ngOnDestroy(): void;
     /**
-     * Setup the ViewHelper for orientation indicator
+     * Setup the ViewHelper with separate renderer
      */
     private setupViewHelper;
     /**
-     * Handle click on ViewHelper
+     * Handle click on ViewHelper canvas
      */
-    private handleViewHelperClick;
+    onViewHelperClick(event: MouseEvent): void;
     /**
-     * Update the ViewHelper (called in render loop)
+     * Render the ViewHelper (called in render loop)
      */
-    private updateViewHelper;
+    private renderViewHelper;
     /**
      * Close dropdown menu when clicking outside
      */

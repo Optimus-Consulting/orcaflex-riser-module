@@ -106,9 +106,37 @@ export class ViewHelper extends THREE.Object3D {
   }
 
   /**
-   * Render the view helper
+   * Render the view helper to a viewport in the main renderer
    */
   render(renderer: THREE.WebGLRenderer, containerWidth: number, _containerHeight: number): void {
+    this.updateOpacity();
+
+    // Render in corner - save and restore autoClear state
+    const x = containerWidth - this.dim;
+    const autoClear = renderer.autoClear;
+    renderer.autoClear = false;
+
+    renderer.setViewport(x, 0, this.dim, this.dim);
+    renderer.clearDepth();
+    renderer.render(this, this.camera);
+
+    renderer.autoClear = autoClear;
+  }
+
+  /**
+   * Render the view helper to a separate canvas/renderer
+   */
+  renderToCanvas(renderer: THREE.WebGLRenderer): void {
+    this.updateOpacity();
+
+    // Render to the full canvas
+    renderer.render(this, this.camera);
+  }
+
+  /**
+   * Update opacity based on camera orientation
+   */
+  private updateOpacity(): void {
     // Update orientation to match editor camera
     this.quaternion.copy(this.editorCamera.quaternion).invert();
     this.updateMatrixWorld();
@@ -140,17 +168,6 @@ export class ViewHelper extends THREE.Object3D {
       this.posZAxisHelper.material.opacity = 0.5;
       this.negZAxisHelper.material.opacity = 1;
     }
-
-    // Render in corner - save and restore autoClear state
-    const x = containerWidth - this.dim;
-    const autoClear = renderer.autoClear;
-    renderer.autoClear = false;
-
-    renderer.setViewport(x, 0, this.dim, this.dim);
-    renderer.clearDepth();
-    renderer.render(this, this.camera);
-
-    renderer.autoClear = autoClear;
   }
 
   /**

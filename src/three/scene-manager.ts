@@ -227,13 +227,6 @@ export class SceneManager {
     const animate = () => {
       this.animationId = requestAnimationFrame(animate);
       this.controls.update();
-
-      // Reset viewport to full canvas before rendering main scene
-      const canvas = this.renderer.domElement;
-      this.renderer.setViewport(0, 0, canvas.clientWidth, canvas.clientHeight);
-      this.renderer.setScissor(0, 0, canvas.clientWidth, canvas.clientHeight);
-      this.renderer.setScissorTest(false);
-
       this.renderer.render(this.scene, this.camera);
       onFrame?.();
     };

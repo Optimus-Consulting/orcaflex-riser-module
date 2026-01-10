@@ -31,9 +31,17 @@ export declare class ViewHelper extends THREE.Object3D {
     private editorCamera;
     constructor(editorCamera: THREE.Camera);
     /**
-     * Render the view helper
+     * Render the view helper to a viewport in the main renderer
      */
     render(renderer: THREE.WebGLRenderer, containerWidth: number, _containerHeight: number): void;
+    /**
+     * Render the view helper to a separate canvas/renderer
+     */
+    renderToCanvas(renderer: THREE.WebGLRenderer): void;
+    /**
+     * Update opacity based on camera orientation
+     */
+    private updateOpacity;
     /**
      * Handle click on the view helper
      * Returns true if a click was handled

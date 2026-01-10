@@ -38,6 +38,9 @@ import * as THREE from 'three';
     <div class="three-view-container" #container>
       <canvas #threeCanvas class="three-canvas"></canvas>
 
+      <!-- ViewHelper canvas overlay -->
+      <canvas #viewHelperCanvas class="view-helper-canvas" (click)="onViewHelperClick($event)"></canvas>
+
       <div class="view-controls">
         <button
           [class.active]="currentView === 'iso'"
@@ -200,18 +203,29 @@ import * as THREE from 'three';
     .menu-item span {
       color: #333;
     }
+
+    .view-helper-canvas {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      width: 128px;
+      height: 128px;
+      cursor: pointer;
+    }
   `]
 })
 export class ThreeViewComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('threeCanvas', { static: true }) canvasRef!: ElementRef<HTMLCanvasElement>;
   @ViewChild('container', { static: true }) containerRef!: ElementRef<HTMLDivElement>;
+  @ViewChild('viewHelperCanvas', { static: true }) viewHelperCanvasRef!: ElementRef<HTMLCanvasElement>;
 
   private modelState = inject(ModelStateService);
   private sceneManager: SceneManager | null = null;
   private resizeObserver: ResizeObserver | null = null;
 
-  // ViewHelper for orientation indicator
+  // ViewHelper with separate renderer
   private viewHelper: ViewHelper | null = null;
+  private viewHelperRenderer: THREE.WebGLRenderer | null = null;
   private clock = new THREE.Clock();
 
   // Scene object references for visibility toggling
@@ -256,7 +270,6 @@ export class ThreeViewComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngAfterViewInit(): void {
     const canvas = this.canvasRef.nativeElement;
-    const container = this.containerRef.nativeElement;
 
     // Initialize Three.js scene
     this.sceneManager!.initialize(canvas);
@@ -267,7 +280,7 @@ export class ThreeViewComponent implements OnInit, AfterViewInit, OnDestroy {
     });
     this.resizeObserver.observe(canvas.parentElement!);
 
-    // Setup ViewHelper for orientation indicator
+    // Setup ViewHelper with separate renderer
     this.setupViewHelper();
 
     // Build initial scene
@@ -275,14 +288,11 @@ export class ThreeViewComponent implements OnInit, AfterViewInit, OnDestroy {
 
     // Start render loop with ViewHelper update
     this.sceneManager!.startRenderLoop(() => {
-      this.updateViewHelper();
+      this.renderViewHelper();
     });
 
     // Handle keyboard shortcuts
     window.addEventListener('keydown', this.handleKeydown.bind(this));
-
-    // Handle ViewHelper clicks
-    container.addEventListener('pointerup', this.handleViewHelperClick.bind(this));
 
     // Close dropdown when clicking outside
     document.addEventListener('click', this.closeMenuOnOutsideClick.bind(this));
@@ -291,18 +301,30 @@ export class ThreeViewComponent implements OnInit, AfterViewInit, OnDestroy {
   ngOnDestroy(): void {
     window.removeEventListener('keydown', this.handleKeydown.bind(this));
     document.removeEventListener('click', this.closeMenuOnOutsideClick.bind(this));
-    this.containerRef?.nativeElement.removeEventListener('pointerup', this.handleViewHelperClick.bind(this));
     this.resizeObserver?.disconnect();
     this.sceneManager?.dispose();
     this.viewHelper?.dispose();
+    this.viewHelperRenderer?.dispose();
   }
 
   /**
-   * Setup the ViewHelper for orientation indicator
+   * Setup the ViewHelper with separate renderer
    */
   private setupViewHelper(): void {
     if (!this.sceneManager) return;
 
+    const viewHelperCanvas = this.viewHelperCanvasRef.nativeElement;
+
+    // Create separate renderer for ViewHelper
+    this.viewHelperRenderer = new THREE.WebGLRenderer({
+      canvas: viewHelperCanvas,
+      alpha: true,
+      antialias: true,
+    });
+    this.viewHelperRenderer.setSize(128, 128);
+    this.viewHelperRenderer.setPixelRatio(window.devicePixelRatio);
+
+    // Create ViewHelper
     const camera = this.sceneManager.getCamera();
     this.viewHelper = new ViewHelper(camera);
     this.viewHelper.controls = {
@@ -312,23 +334,30 @@ export class ThreeViewComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   /**
-   * Handle click on ViewHelper
+   * Handle click on ViewHelper canvas
    */
-  private handleViewHelperClick(event: MouseEvent): void {
+  onViewHelperClick(event: MouseEvent): void {
     if (!this.viewHelper || !this.sceneManager) return;
 
-    const container = this.containerRef.nativeElement;
-    this.viewHelper.handleClick(event, container);
+    // Convert click to ViewHelper coordinates
+    const rect = (event.target as HTMLElement).getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+
+    // Create a fake event for the ViewHelper
+    const fakeEvent = {
+      clientX: rect.right - (128 - x),
+      clientY: rect.bottom - (128 - y),
+    } as MouseEvent;
+
+    this.viewHelper.handleClick(fakeEvent, this.viewHelperCanvasRef.nativeElement);
   }
 
   /**
-   * Update the ViewHelper (called in render loop)
+   * Render the ViewHelper (called in render loop)
    */
-  private updateViewHelper(): void {
-    if (!this.viewHelper || !this.sceneManager) return;
-
-    const renderer = this.sceneManager.getRenderer();
-    const canvas = renderer.domElement;
+  private renderViewHelper(): void {
+    if (!this.viewHelper || !this.viewHelperRenderer) return;
 
     // Update animation if active
     if (this.viewHelper.animating) {
@@ -338,7 +367,10 @@ export class ThreeViewComponent implements OnInit, AfterViewInit, OnDestroy {
 
     // Render ViewHelper only if coordinate systems are visible
     if (this.showCoordinateSystems()) {
-      this.viewHelper.render(renderer, canvas.clientWidth, canvas.clientHeight);
+      // Render to the separate canvas
+      this.viewHelper.renderToCanvas(this.viewHelperRenderer);
+    } else {
+      this.viewHelperRenderer.clear();
     }
   }
 
