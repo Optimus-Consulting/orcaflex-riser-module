@@ -1,0 +1,1 @@
+{"version":3,"file":"water-plane.d.ts","sourceRoot":"","sources":["../../../src/three/object-creators/water-plane.ts"],"names":[],"mappings":"AAAA;;GAEG;AAEH,OAAO,KAAK,KAAK,MAAM,OAAO,CAAC;AAG/B,MAAM,WAAW,iBAAiB;IAChC,IAAI,CAAC,EAAE,MAAM,CAAC;IACd,OAAO,CAAC,EAAE,MAAM,CAAC;CAClB;AAED;;GAEG;AACH,wBAAgB,gBAAgB,CAAC,OAAO,GAAE,iBAAsB,GAAG,KAAK,CAAC,IAAI,CAuB5E"}

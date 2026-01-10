@@ -1,0 +1,58 @@
+{
+  "name": "orcaflex-riser-module",
+  "version": "1.0.0",
+  "description": "OrcaFlex Riser Analysis module for CARIS Pro",
+  "main": "dist/remoteEntry.js",
+  "scripts": {
+    "start": "webpack serve --mode development --port 4202",
+    "build": "webpack --mode production",
+    "build:dev": "webpack --mode development",
+    "build:watch": "webpack --mode development --watch",
+    "package": "npm run build && node scripts/package.js",
+    "lint": "eslint src --ext .ts",
+    "typecheck": "tsc --noEmit",
+    "test:standalone": "webpack serve --config webpack.test.config.js"
+  },
+  "peerDependencies": {
+    "@angular/common": "^21.0.0",
+    "@angular/core": "^21.0.0",
+    "@angular/forms": "^21.0.0",
+    "@angular/material": "^21.0.0",
+    "rxjs": "^7.8.0",
+    "three": "^0.170.0"
+  },
+  "dependencies": {
+    "@angular/common": "^21.0.0",
+    "@angular/compiler": "^21.0.8",
+    "@angular/core": "^21.0.0",
+    "@angular/forms": "^21.0.0",
+    "@angular/platform-browser": "^21.0.0",
+    "@angular/platform-browser-dynamic": "^21.0.0",
+    "jszip": "^3.10.1",
+    "primeicons": "^7.0.0",
+    "primeng": "^21.0.2",
+    "rxjs": "^7.8.0",
+    "three": "^0.170.0",
+    "zone.js": "^0.15.0"
+  },
+  "devDependencies": {
+    "@types/three": "^0.170.0",
+    "archiver": "^7.0.0",
+    "html-webpack-plugin": "^5.6.0",
+    "ts-loader": "^9.5.0",
+    "typescript": "~5.6.0",
+    "webpack": "^5.90.0",
+    "webpack-cli": "^5.1.0",
+    "webpack-dev-server": "^5.0.0"
+  },
+  "keywords": [
+    "caris",
+    "orcaflex",
+    "riser",
+    "analysis",
+    "offshore",
+    "module"
+  ],
+  "author": "CARIS Pro",
+  "license": "Proprietary"
+}

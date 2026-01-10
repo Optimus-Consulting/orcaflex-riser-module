@@ -1,0 +1,45 @@
+import { LineTypeConfig, BuoyancyModuleConfig } from '../../types';
+export declare class LineTypesSectionComponent {
+    private modelState;
+    lineTypes: import("@angular/core").Signal<LineTypeConfig[]>;
+    buoyancyModules: import("@angular/core").Signal<BuoyancyModuleConfig[]>;
+    selectedLineTypeId: import("@angular/core").WritableSignal<string | null>;
+    selectedBuoyancyId: import("@angular/core").WritableSignal<string | null>;
+    addingLineType: import("@angular/core").WritableSignal<boolean>;
+    addingBuoyancy: import("@angular/core").WritableSignal<boolean>;
+    newLineType: Partial<LineTypeConfig>;
+    newLineTypeODmm: number;
+    newLineTypeIDmm: number;
+    newBuoyancy: Partial<BuoyancyModuleConfig>;
+    newBuoyancyODmm: number;
+    newBuoyancyLengthmm: number;
+    showLineTypesImportDialog: boolean;
+    showBuoyancyImportDialog: boolean;
+    formatDiameter(meters: number): string;
+    getWetMass(lineType: LineTypeConfig): number;
+    getPipeDensity(lineType: LineTypeConfig): number;
+    selectLineType(id: string): void;
+    selectBuoyancy(id: string): void;
+    updateLineType(lineType: LineTypeConfig, field: keyof LineTypeConfig, value: any): void;
+    updateDryMass(lineType: LineTypeConfig, dryMass: number): void;
+    updateWetMass(lineType: LineTypeConfig, wetMass: number): void;
+    updatePipeDensity(lineType: LineTypeConfig, density: number): void;
+    updateDragCoeff(lineType: LineTypeConfig, axis: 'normal' | 'axial', value: number): void;
+    deleteLineType(id: string): void;
+    startAddLineType(): void;
+    saveNewLineType(): void;
+    cancelAddLineType(): void;
+    updateBuoyancy(buoyancy: BuoyancyModuleConfig, field: keyof BuoyancyModuleConfig, value: any): void;
+    deleteBuoyancy(buoyancyId: string): void;
+    getModuleBuoyancy(buoyancy: BuoyancyModuleConfig): number;
+    getSectionLength(buoyancy: BuoyancyModuleConfig): number;
+    getBuoyancyPerMeter(buoyancy: BuoyancyModuleConfig): number;
+    startAddBuoyancy(): void;
+    saveNewBuoyancy(): void;
+    cancelAddBuoyancy(): void;
+    private getDefaultNewLineType;
+    private getDefaultNewBuoyancy;
+    handleLineTypesImport(lineTypes: LineTypeConfig[]): void;
+    handleBuoyancyModulesImport(modules: BuoyancyModuleConfig[]): void;
+}
+//# sourceMappingURL=line-types-section.component.d.ts.map

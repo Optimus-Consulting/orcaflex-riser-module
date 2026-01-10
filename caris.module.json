@@ -1,0 +1,212 @@
+{
+  "name": "orcaflex-riser-module",
+  "displayName": "OrcaFlex Riser Analysis",
+  "version": "1.0.0",
+  "description": "Automated OrcaFlex model generation for riser analysis. Provides interactive 3D visualization, parameter-driven input, goal-seeking calculations, and direct export to OrcaFlex YAML format.",
+  "author": {
+    "name": "CARIS Pro",
+    "email": "support@carispro.com"
+  },
+  "license": "Proprietary",
+  "carisVersion": ">=2.0.0",
+  "category": "analysis",
+  "tags": ["riser", "orcaflex", "analysis", "3d", "catenary", "lazy-wave"],
+  "icon": "./assets/icon.png",
+  "preview": "./assets/preview.png",
+
+  "entry": {
+    "remoteEntry": "./remoteEntry.js",
+    "exposedModule": "./Module",
+    "componentName": "OrcaFlexRiserModule"
+  },
+
+  "routing": {
+    "path": "orcaflex-riser",
+    "title": "OrcaFlex Riser Analysis",
+    "icon": "cable"
+  },
+
+  "permissions": {
+    "required": [
+      "read:projects",
+      "read:data"
+    ],
+    "optional": [
+      "write:data",
+      "export:data"
+    ]
+  },
+
+  "configuration": {
+    "schema": {
+      "type": "object",
+      "properties": {
+        "defaultWaterDepth": {
+          "type": "number",
+          "default": 100,
+          "minimum": 10,
+          "maximum": 3000,
+          "description": "Default water depth in meters"
+        },
+        "defaultUnits": {
+          "type": "string",
+          "enum": ["SI", "US"],
+          "default": "SI",
+          "description": "Default unit system"
+        },
+        "autoCalculate": {
+          "type": "boolean",
+          "default": true,
+          "description": "Auto-calculate on parameter change"
+        },
+        "showDebugInfo": {
+          "type": "boolean",
+          "default": false,
+          "description": "Show debug information in console"
+        }
+      }
+    }
+  },
+
+  "dependencies": {
+    "shared": [
+      "@angular/core",
+      "@angular/common",
+      "@angular/forms",
+      "@angular/material",
+      "rxjs",
+      "three"
+    ]
+  },
+
+  "sidebar": {
+    "left": {
+      "enabled": true,
+      "sections": ["environment", "vessel", "line-types"]
+    },
+    "right": {
+      "enabled": true,
+      "sections": ["risers", "results", "logs"]
+    }
+  },
+
+  "ribbon": {
+    "menus": [
+      {
+        "label": "File",
+        "items": [
+          {
+            "label": "New Model",
+            "action": "newModel",
+            "icon": "add",
+            "shortcut": "Ctrl+N"
+          },
+          {
+            "label": "Import YAML",
+            "action": "importYaml",
+            "icon": "upload_file",
+            "shortcut": "Ctrl+O"
+          },
+          {
+            "label": "Export YAML",
+            "action": "exportYaml",
+            "icon": "download",
+            "shortcut": "Ctrl+S"
+          },
+          { "divider": true },
+          {
+            "label": "Close",
+            "action": "closeModule",
+            "icon": "close"
+          }
+        ]
+      },
+      {
+        "label": "Edit",
+        "items": [
+          {
+            "label": "Undo",
+            "action": "undo",
+            "icon": "undo",
+            "shortcut": "Ctrl+Z"
+          },
+          {
+            "label": "Redo",
+            "action": "redo",
+            "icon": "redo",
+            "shortcut": "Ctrl+Y"
+          }
+        ]
+      },
+      {
+        "label": "View",
+        "items": [
+          {
+            "label": "Reset View",
+            "action": "resetView",
+            "icon": "restart_alt"
+          },
+          {
+            "label": "Top View",
+            "action": "topView",
+            "icon": "vertical_align_top"
+          },
+          {
+            "label": "Side View",
+            "action": "sideView",
+            "icon": "view_sidebar"
+          },
+          {
+            "label": "Front View",
+            "action": "frontView",
+            "icon": "view_array"
+          },
+          { "divider": true },
+          {
+            "label": "Zoom to Fit",
+            "action": "zoomToFit",
+            "icon": "fit_screen",
+            "shortcut": "F"
+          }
+        ]
+      },
+      {
+        "label": "Tools",
+        "items": [
+          {
+            "label": "Calculate All",
+            "action": "calculateAll",
+            "icon": "calculate",
+            "shortcut": "Ctrl+Enter"
+          },
+          {
+            "label": "Goal Seek",
+            "action": "goalSeek",
+            "icon": "track_changes"
+          },
+          { "divider": true },
+          {
+            "label": "Validate Model",
+            "action": "validateModel",
+            "icon": "check_circle"
+          }
+        ]
+      },
+      {
+        "label": "Help",
+        "items": [
+          {
+            "label": "Documentation",
+            "action": "openDocs",
+            "icon": "menu_book"
+          },
+          {
+            "label": "About",
+            "action": "showAbout",
+            "icon": "info"
+          }
+        ]
+      }
+    ]
+  }
+}
