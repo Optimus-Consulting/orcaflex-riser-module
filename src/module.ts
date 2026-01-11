@@ -36,6 +36,8 @@ export interface OcModule {
 export class OrcaFlexRiserModule implements OcModule {
   readonly name = 'orcaflex-riser-module';
   readonly version = '1.0.0';
+  // Static component reference for module federation loading
+  static readonly Component = OrcaFlexRiserComponent;
   readonly component = OrcaFlexRiserComponent;
 
   private context: OcModuleContext | null = null;
@@ -274,3 +276,9 @@ goal-seeking calculations, and direct export to OrcaFlex YAML format.
 
 // Default export for Module Federation
 export default OrcaFlexRiserModule;
+
+// Also export the component directly for easy access
+export { OrcaFlexRiserComponent };
+
+// Export bootstrap functions for Web Component approach
+export { bootstrapModule, destroyModule, CUSTOM_ELEMENT_TAG } from './bootstrap';

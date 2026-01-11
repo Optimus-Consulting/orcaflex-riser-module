@@ -114,15 +114,21 @@ import * as THREE from 'three';
       display: block;
       width: 100%;
       height: 100%;
+      position: relative;
     }
 
     .three-view-container {
-      position: relative;
-      width: 100%;
-      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
     }
 
     .three-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       display: block;
@@ -270,6 +276,7 @@ export class ThreeViewComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngAfterViewInit(): void {
     const canvas = this.canvasRef.nativeElement;
+    const container = this.containerRef.nativeElement;
 
     // Initialize Three.js scene
     this.sceneManager!.initialize(canvas);
@@ -278,7 +285,7 @@ export class ThreeViewComponent implements OnInit, AfterViewInit, OnDestroy {
     this.resizeObserver = new ResizeObserver(() => {
       this.sceneManager?.onResize();
     });
-    this.resizeObserver.observe(canvas.parentElement!);
+    this.resizeObserver.observe(container);
 
     // Setup ViewHelper with separate renderer
     this.setupViewHelper();
@@ -290,6 +297,12 @@ export class ThreeViewComponent implements OnInit, AfterViewInit, OnDestroy {
     this.sceneManager!.startRenderLoop(() => {
       this.renderViewHelper();
     });
+
+    // Force a resize after a short delay to ensure container has proper dimensions
+    setTimeout(() => {
+      this.sceneManager?.onResize();
+      this.sceneManager?.zoomToFit();
+    }, 100);
 
     // Handle keyboard shortcuts
     window.addEventListener('keydown', this.handleKeydown.bind(this));
@@ -400,15 +413,23 @@ export class ThreeViewComponent implements OnInit, AfterViewInit, OnDestroy {
     const vessels = this.modelState.vessels();
     const risers = this.modelState.risers();
 
+    console.log('[ThreeView] rebuildScene:', {
+      waterDepth: env.sea.waterDepth,
+      vesselCount: vessels.length,
+      riserCount: risers.length,
+    });
+
     // Add water surface
     this.waterPlane = createWaterPlane() as THREE.Mesh;
     this.waterPlane.visible = this.showWater();
     this.sceneManager.add(this.waterPlane);
+    console.log('[ThreeView] Added water plane at z=0');
 
     // Add seabed
     this.seabedPlane = createSeabed(env.sea.waterDepth) as THREE.Mesh;
     this.seabedPlane.visible = this.showSeabed();
     this.sceneManager.add(this.seabedPlane);
+    console.log('[ThreeView] Added seabed at z=' + (-env.sea.waterDepth));
 
     // Add grid
     this.gridHelper = createGrid() as THREE.GridHelper;
@@ -567,6 +588,13 @@ export class ThreeViewComponent implements OnInit, AfterViewInit, OnDestroy {
     this.sceneManager.updateSceneBounds({
       min: { x: -100, y: -100, z: -env.sea.waterDepth - 50 },
       max: { x: 400, y: 100, z: 50 },
+    });
+
+    // Log final scene state
+    const scene = this.sceneManager.getScene();
+    console.log('[ThreeView] Scene children count:', scene.children.length);
+    scene.children.forEach((child, i) => {
+      console.log(`[ThreeView]   ${i}: ${child.type} - ${child.name || child.userData?.name || 'unnamed'}`);
     });
   }
 

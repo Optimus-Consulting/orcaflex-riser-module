@@ -38,12 +38,27 @@ export class SceneManager {
    * Initialize the scene with a canvas element
    */
   initialize(canvas: HTMLCanvasElement): void {
+    const parent = canvas.parentElement;
+
+    // Get dimensions from parent container (more reliable)
+    let width = parent?.clientWidth || canvas.clientWidth;
+    let height = parent?.clientHeight || canvas.clientHeight;
+
+    // Fallback if still no size
+    if (width === 0 || height === 0) {
+      width = 800;
+      height = 600;
+      console.log('[SceneManager] No container size, using fallback:', width, height);
+    } else {
+      console.log('[SceneManager] Initialize with dimensions:', width, height);
+    }
+
     // Setup renderer
     this.renderer = new THREE.WebGLRenderer({
       canvas,
       antialias: true,
     });
-    this.renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+    this.renderer.setSize(width, height, false); // false = don't update canvas CSS
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     this.renderer.shadowMap.enabled = true;
     this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
@@ -53,7 +68,7 @@ export class SceneManager {
     this.setupBackground();
 
     // Setup camera
-    const aspect = canvas.clientWidth / canvas.clientHeight;
+    const aspect = width / height;
     this.camera = new THREE.PerspectiveCamera(45, aspect, 1, 5000);
 
     // Setup controls
@@ -215,9 +230,25 @@ export class SceneManager {
    */
   onResize(): void {
     const canvas = this.renderer.domElement;
-    this.camera.aspect = canvas.clientWidth / canvas.clientHeight;
-    this.camera.updateProjectionMatrix();
-    this.renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+    const parent = canvas.parentElement;
+
+    // Get dimensions from parent container (more reliable than canvas)
+    let width = parent?.clientWidth || canvas.clientWidth;
+    let height = parent?.clientHeight || canvas.clientHeight;
+
+    // Fallback
+    if (width === 0 || height === 0) {
+      width = 800;
+      height = 600;
+      console.log('[SceneManager] onResize: Using fallback dimensions');
+    }
+
+    if (width > 0 && height > 0) {
+      this.camera.aspect = width / height;
+      this.camera.updateProjectionMatrix();
+      this.renderer.setSize(width, height, false); // false = don't update canvas style
+      console.log('[SceneManager] onResize:', width, height);
+    }
   }
 
   /**

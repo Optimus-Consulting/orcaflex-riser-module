@@ -28,6 +28,11 @@ import { RiserConfig, CatenaryRequest, LazyWaveRequest, calculateEffectiveWeight
     ThreeViewComponent,
     GenerateOrcaflexDialogComponent,
   ],
+  // Provide services at component level for module federation compatibility
+  providers: [
+    ModelStateService,
+    OrcaFlexApiService,
+  ],
   template: `
     <div class="orcaflex-workspace">
       <!-- Left Sidebar -->
@@ -202,6 +207,8 @@ import { RiserConfig, CatenaryRequest, LazyWaveRequest, calculateEffectiveWeight
     .view-container {
       flex: 1;
       position: relative;
+      min-height: 0;
+      overflow: hidden;
     }
 
     .status-bar {

@@ -25,6 +25,7 @@
     "@angular/common": "^21.0.0",
     "@angular/compiler": "^21.0.8",
     "@angular/core": "^21.0.0",
+    "@angular/elements": "^21.0.8",
     "@angular/forms": "^21.0.0",
     "@angular/platform-browser": "^21.0.0",
     "@angular/platform-browser-dynamic": "^21.0.0",
@@ -36,11 +37,18 @@
     "zone.js": "^0.15.0"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "^21.0.5",
+    "@angular/compiler-cli": "^21.0.8",
+    "@ngtools/webpack": "^21.0.5",
     "@types/three": "^0.170.0",
     "archiver": "^7.0.0",
+    "css-loader": "^7.1.2",
     "html-webpack-plugin": "^5.6.0",
+    "sass": "^1.97.2",
+    "sass-loader": "^16.0.6",
+    "to-string-loader": "^1.2.0",
     "ts-loader": "^9.5.0",
-    "typescript": "~5.6.0",
+    "typescript": "~5.9.0",
     "webpack": "^5.90.0",
     "webpack-cli": "^5.1.0",
     "webpack-dev-server": "^5.0.0"

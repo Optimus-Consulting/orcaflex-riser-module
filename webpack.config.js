@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const ModuleFederationPlugin = webpack.container.ModuleFederationPlugin;
+const { AngularWebpackPlugin } = require('@ngtools/webpack');
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
@@ -24,13 +25,26 @@ module.exports = (env, argv) => {
     module: {
       rules: [
         {
-          test: /\.ts$/,
-          use: 'ts-loader',
+          test: /\.[jt]sx?$/,
+          loader: '@ngtools/webpack',
           exclude: /node_modules/,
+        },
+        {
+          test: /\.css$/,
+          use: ['to-string-loader', 'css-loader'],
+        },
+        {
+          test: /\.scss$/,
+          use: ['to-string-loader', 'css-loader', 'sass-loader'],
         },
       ],
     },
     plugins: [
+      new AngularWebpackPlugin({
+        tsconfig: './tsconfig.json',
+        jitMode: false, // Use AOT compilation
+        directTemplateLoading: true,
+      }),
       new ModuleFederationPlugin({
         name: 'orcaflex_riser_module',
         filename: 'remoteEntry.js',
@@ -40,27 +54,27 @@ module.exports = (env, argv) => {
         shared: {
           '@angular/core': {
             singleton: true,
-            strictVersion: true,
+            strictVersion: false,
             requiredVersion: '^21.0.0',
           },
           '@angular/common': {
             singleton: true,
-            strictVersion: true,
+            strictVersion: false,
             requiredVersion: '^21.0.0',
           },
           '@angular/forms': {
             singleton: true,
-            strictVersion: true,
+            strictVersion: false,
             requiredVersion: '^21.0.0',
           },
           '@angular/material': {
             singleton: true,
-            strictVersion: true,
+            strictVersion: false,
             requiredVersion: '^21.0.0',
           },
           'rxjs': {
             singleton: true,
-            strictVersion: true,
+            strictVersion: false,
             requiredVersion: '^7.8.0',
           },
           'three': {
