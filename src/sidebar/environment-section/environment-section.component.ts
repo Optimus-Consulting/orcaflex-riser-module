@@ -219,17 +219,17 @@ import { CurrentProfile, WaveConfig } from '../../types';
       justify-content: space-between;
       align-items: center;
       padding: 8px 12px;
-      background: var(--caris-bg-subtle, #f5f5f5);
-      border-bottom: 1px solid var(--caris-border-light, #eee);
+      background: var(--oc-bg-subtle, #f5f5f5);
+      border-bottom: 1px solid var(--oc-border-light, #eee);
       cursor: pointer;
       font-size: 11px;
       font-weight: 600;
       text-transform: uppercase;
-      color: var(--caris-text-secondary, #666);
+      color: var(--oc-text-secondary, #666);
     }
 
     .subsection-header:hover {
-      background: var(--caris-bg-hover, #ebebeb);
+      background: var(--oc-bg-hover, #ebebeb);
     }
 
     .toggle {
@@ -251,7 +251,7 @@ import { CurrentProfile, WaveConfig } from '../../types';
     .form-group label {
       display: block;
       font-size: 11px;
-      color: var(--caris-text-secondary, #666);
+      color: var(--oc-text-secondary, #666);
       margin-bottom: 4px;
     }
 
@@ -259,7 +259,7 @@ import { CurrentProfile, WaveConfig } from '../../types';
     .form-group select {
       width: 100%;
       padding: 6px 8px;
-      border: 1px solid var(--caris-border-light, #ddd);
+      border: 1px solid var(--oc-border-light, #ddd);
       border-radius: 4px;
       font-size: 12px;
       background: white;
@@ -268,7 +268,7 @@ import { CurrentProfile, WaveConfig } from '../../types';
     .form-group input:focus,
     .form-group select:focus {
       outline: none;
-      border-color: var(--caris-primary, #1976d2);
+      border-color: var(--oc-primary, #1976d2);
     }
 
     .form-row {
@@ -299,7 +299,7 @@ import { CurrentProfile, WaveConfig } from '../../types';
 
     .depth-val {
       width: 60px;
-      color: var(--caris-text-secondary, #666);
+      color: var(--oc-text-secondary, #666);
     }
 
     .speed-val {
@@ -308,7 +308,7 @@ import { CurrentProfile, WaveConfig } from '../../types';
 
     .current-input {
       padding: 4px 6px;
-      border: 1px solid var(--caris-border-light, #ddd);
+      border: 1px solid var(--oc-border-light, #ddd);
       border-radius: 3px;
       font-size: 11px;
     }
@@ -334,39 +334,39 @@ import { CurrentProfile, WaveConfig } from '../../types';
     }
 
     .icon-btn:hover {
-      background: var(--caris-bg-hover, #f0f0f0);
+      background: var(--oc-bg-hover, #f0f0f0);
     }
 
     .icon-btn.edit {
-      color: var(--caris-primary, #1976d2);
+      color: var(--oc-primary, #1976d2);
     }
 
     .icon-btn.delete {
-      color: var(--caris-error, #f44336);
+      color: var(--oc-error, #f44336);
     }
 
     .icon-btn.save {
-      color: var(--caris-success, #4caf50);
+      color: var(--oc-success, #4caf50);
     }
 
     .icon-btn.cancel {
-      color: var(--caris-text-secondary, #666);
+      color: var(--oc-text-secondary, #666);
     }
 
     .add-current-btn {
       width: 100%;
       padding: 6px 12px;
-      border: 1px dashed var(--caris-border-light, #ddd);
+      border: 1px dashed var(--oc-border-light, #ddd);
       border-radius: 4px;
       background: transparent;
-      color: var(--caris-text-secondary, #666);
+      color: var(--oc-text-secondary, #666);
       font-size: 11px;
       cursor: pointer;
     }
 
     .add-current-btn:hover {
-      border-color: var(--caris-primary, #1976d2);
-      color: var(--caris-primary, #1976d2);
+      border-color: var(--oc-primary, #1976d2);
+      color: var(--oc-primary, #1976d2);
     }
   `]
 })

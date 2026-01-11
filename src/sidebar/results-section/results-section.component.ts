@@ -82,13 +82,13 @@ import { ModelStateService } from '../../services/model-state.service';
       display: flex;
       justify-content: space-between;
       padding: 8px 12px;
-      background: var(--caris-bg-subtle, #f5f5f5);
+      background: var(--oc-bg-subtle, #f5f5f5);
       border-radius: 4px;
     }
 
     .label {
       font-size: 11px;
-      color: var(--caris-text-secondary, #666);
+      color: var(--oc-text-secondary, #666);
     }
 
     .value {
@@ -100,13 +100,13 @@ import { ModelStateService } from '../../services/model-state.service';
     .segments-section {
       margin-top: 16px;
       padding-top: 12px;
-      border-top: 1px solid var(--caris-border-light, #eee);
+      border-top: 1px solid var(--oc-border-light, #eee);
     }
 
     .segments-section h4 {
       font-size: 11px;
       font-weight: 600;
-      color: var(--caris-text-secondary, #666);
+      color: var(--oc-text-secondary, #666);
       margin: 0 0 8px 0;
       text-transform: uppercase;
     }
@@ -115,7 +115,7 @@ import { ModelStateService } from '../../services/model-state.service';
       display: flex;
       justify-content: space-between;
       padding: 6px 8px;
-      border-bottom: 1px solid var(--caris-border-light, #eee);
+      border-bottom: 1px solid var(--oc-border-light, #eee);
       font-size: 12px;
     }
 
@@ -124,18 +124,18 @@ import { ModelStateService } from '../../services/model-state.service';
     }
 
     .segment-name {
-      color: var(--caris-text-primary, #333);
+      color: var(--oc-text-primary, #333);
     }
 
     .segment-length {
-      color: var(--caris-text-secondary, #666);
+      color: var(--oc-text-secondary, #666);
       font-family: monospace;
     }
 
     .no-results, .no-selection {
       text-align: center;
       padding: 24px;
-      color: var(--caris-text-secondary, #999);
+      color: var(--oc-text-secondary, #999);
     }
 
     .no-results p {
@@ -145,7 +145,7 @@ import { ModelStateService } from '../../services/model-state.service';
 
     .hint {
       font-size: 11px;
-      color: var(--caris-text-tertiary, #bbb);
+      color: var(--oc-text-tertiary, #bbb);
     }
 
     .no-selection {

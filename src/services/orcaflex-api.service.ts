@@ -14,7 +14,7 @@ import {
 
 /**
  * API service for OrcaFlex calculations and YAML operations.
- * Uses the ModuleApiService provided by CARIS host application,
+ * Uses the ModuleApiService provided by Offshore Constructor host application,
  * or falls back to HttpClient for standalone testing.
  */
 @Injectable({ providedIn: 'root' })
@@ -23,7 +23,7 @@ export class OrcaFlexApiService {
   private externalApiService: any = null;
 
   /**
-   * Initialize with the CARIS module API service (optional)
+   * Initialize with the OC module API service (optional)
    */
   setApiService(api: any): void {
     this.externalApiService = api;

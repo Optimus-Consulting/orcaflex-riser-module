@@ -267,7 +267,7 @@ const CONTENT_COLORS = [
     .add-btn {
       width: 100%;
       padding: 8px 12px;
-      background: var(--caris-primary, #1976d2);
+      background: var(--oc-primary, #1976d2);
       color: white;
       border: none;
       border-radius: 4px;
@@ -280,7 +280,7 @@ const CONTENT_COLORS = [
     }
 
     .add-btn:hover {
-      background: var(--caris-primary-dark, #1565c0);
+      background: var(--oc-primary-dark, #1565c0);
     }
 
     .icon {
@@ -288,7 +288,7 @@ const CONTENT_COLORS = [
     }
 
     .riser-item {
-      border: 1px solid var(--caris-border-light, #ddd);
+      border: 1px solid var(--oc-border-light, #ddd);
       border-radius: 4px;
       margin-bottom: 8px;
       transition: all 0.2s;
@@ -296,12 +296,12 @@ const CONTENT_COLORS = [
     }
 
     .riser-item:hover {
-      border-color: var(--caris-primary, #1976d2);
+      border-color: var(--oc-primary, #1976d2);
     }
 
     .riser-item.selected {
-      border-color: var(--caris-primary, #1976d2);
-      background: var(--caris-bg-selected, #e3f2fd);
+      border-color: var(--oc-primary, #1976d2);
+      background: var(--oc-bg-selected, #e3f2fd);
     }
 
     .riser-header {
@@ -330,7 +330,7 @@ const CONTENT_COLORS = [
     .riser-type {
       font-size: 9px;
       padding: 2px 6px;
-      background: var(--caris-bg-subtle, #f0f0f0);
+      background: var(--oc-bg-subtle, #f0f0f0);
       border-radius: 10px;
       text-transform: uppercase;
       font-weight: 600;
@@ -351,7 +351,7 @@ const CONTENT_COLORS = [
       height: 18px;
       border: none;
       background: transparent;
-      color: var(--caris-text-tertiary, #bbb);
+      color: var(--oc-text-tertiary, #bbb);
       font-size: 16px;
       cursor: pointer;
       border-radius: 3px;
@@ -359,7 +359,7 @@ const CONTENT_COLORS = [
 
     .delete-btn:hover {
       background: #ffebee;
-      color: var(--caris-error, #f44336);
+      color: var(--oc-error, #f44336);
     }
 
     .riser-info {
@@ -367,23 +367,23 @@ const CONTENT_COLORS = [
       display: flex;
       justify-content: space-between;
       font-size: 11px;
-      color: var(--caris-text-secondary, #666);
+      color: var(--oc-text-secondary, #666);
     }
 
     .info-item.calculated {
-      color: var(--caris-success, #4caf50);
+      color: var(--oc-success, #4caf50);
       font-weight: 500;
     }
 
     .info-item.pending {
-      color: var(--caris-text-tertiary, #999);
+      color: var(--oc-text-tertiary, #999);
       font-style: italic;
     }
 
     .riser-editor {
       padding: 12px;
-      border-top: 1px solid var(--caris-border-light, #eee);
-      background: var(--caris-bg-subtle, #fafafa);
+      border-top: 1px solid var(--oc-border-light, #eee);
+      background: var(--oc-bg-subtle, #fafafa);
     }
 
     .form-group {
@@ -393,7 +393,7 @@ const CONTENT_COLORS = [
     .form-group label {
       display: block;
       font-size: 10px;
-      color: var(--caris-text-secondary, #666);
+      color: var(--oc-text-secondary, #666);
       margin-bottom: 2px;
     }
 
@@ -401,7 +401,7 @@ const CONTENT_COLORS = [
     .form-group select {
       width: 100%;
       padding: 5px 6px;
-      border: 1px solid var(--caris-border-light, #ddd);
+      border: 1px solid var(--oc-border-light, #ddd);
       border-radius: 4px;
       font-size: 11px;
       background: white;
@@ -410,7 +410,7 @@ const CONTENT_COLORS = [
     .form-group input:focus,
     .form-group select:focus {
       outline: none;
-      border-color: var(--caris-primary, #1976d2);
+      border-color: var(--oc-primary, #1976d2);
     }
 
     .form-row {
@@ -426,10 +426,10 @@ const CONTENT_COLORS = [
       font-size: 10px;
       font-weight: 600;
       text-transform: uppercase;
-      color: var(--caris-text-secondary, #666);
+      color: var(--oc-text-secondary, #666);
       margin: 12px 0 8px 0;
       padding-top: 8px;
-      border-top: 1px solid var(--caris-border-light, #eee);
+      border-top: 1px solid var(--oc-border-light, #eee);
     }
 
     /* Contents section styles */
@@ -445,12 +445,12 @@ const CONTENT_COLORS = [
       gap: 8px;
       padding: 6px 8px;
       background: white;
-      border: 1px solid var(--caris-border-light, #ddd);
+      border: 1px solid var(--oc-border-light, #ddd);
       border-radius: 4px;
     }
 
     .content-item.active {
-      border-color: var(--caris-primary, #1976d2);
+      border-color: var(--oc-primary, #1976d2);
       background: #e3f2fd;
     }
 
@@ -478,7 +478,7 @@ const CONTENT_COLORS = [
 
     .content-name:focus {
       background: white !important;
-      border: 1px solid var(--caris-primary, #1976d2) !important;
+      border: 1px solid var(--oc-primary, #1976d2) !important;
     }
 
     .content-density {
@@ -496,7 +496,7 @@ const CONTENT_COLORS = [
 
     .content-density .unit {
       font-size: 9px;
-      color: var(--caris-text-tertiary, #999);
+      color: var(--oc-text-tertiary, #999);
     }
 
     .content-actions {
@@ -507,7 +507,7 @@ const CONTENT_COLORS = [
     .select-btn {
       width: 20px;
       height: 20px;
-      border: 1px solid var(--caris-border-light, #ddd);
+      border: 1px solid var(--oc-border-light, #ddd);
       border-radius: 50%;
       background: white;
       font-size: 10px;
@@ -518,9 +518,9 @@ const CONTENT_COLORS = [
     }
 
     .select-btn.selected {
-      background: var(--caris-primary, #1976d2);
+      background: var(--oc-primary, #1976d2);
       color: white;
-      border-color: var(--caris-primary, #1976d2);
+      border-color: var(--oc-primary, #1976d2);
     }
 
     .remove-btn {
@@ -528,7 +528,7 @@ const CONTENT_COLORS = [
       height: 20px;
       border: none;
       background: transparent;
-      color: var(--caris-text-tertiary, #bbb);
+      color: var(--oc-text-tertiary, #bbb);
       font-size: 14px;
       cursor: pointer;
       border-radius: 3px;
@@ -536,7 +536,7 @@ const CONTENT_COLORS = [
 
     .remove-btn:hover:not(:disabled) {
       background: #ffebee;
-      color: var(--caris-error, #f44336);
+      color: var(--oc-error, #f44336);
     }
 
     .remove-btn:disabled {
@@ -546,17 +546,17 @@ const CONTENT_COLORS = [
 
     .add-content-btn {
       padding: 6px;
-      border: 1px dashed var(--caris-border-light, #ccc);
+      border: 1px dashed var(--oc-border-light, #ccc);
       border-radius: 4px;
       background: transparent;
       font-size: 10px;
-      color: var(--caris-text-secondary, #666);
+      color: var(--oc-text-secondary, #666);
       cursor: pointer;
     }
 
     .add-content-btn:hover {
-      border-color: var(--caris-primary, #1976d2);
-      color: var(--caris-primary, #1976d2);
+      border-color: var(--oc-primary, #1976d2);
+      color: var(--oc-primary, #1976d2);
     }
 
     .type-selector {
@@ -568,7 +568,7 @@ const CONTENT_COLORS = [
     .type-btn {
       flex: 1;
       padding: 6px 12px;
-      border: 1px solid var(--caris-border-light, #ddd);
+      border: 1px solid var(--oc-border-light, #ddd);
       border-radius: 4px;
       background: white;
       font-size: 11px;
@@ -576,20 +576,20 @@ const CONTENT_COLORS = [
     }
 
     .type-btn:hover {
-      background: var(--caris-bg-hover, #f0f0f0);
+      background: var(--oc-bg-hover, #f0f0f0);
     }
 
     .type-btn.active {
-      background: var(--caris-primary, #1976d2);
+      background: var(--oc-primary, #1976d2);
       color: white;
-      border-color: var(--caris-primary, #1976d2);
+      border-color: var(--oc-primary, #1976d2);
     }
 
     .results-summary {
       margin-top: 12px;
       padding: 10px;
       background: white;
-      border: 1px solid var(--caris-border-light, #eee);
+      border: 1px solid var(--oc-border-light, #eee);
       border-radius: 4px;
     }
 
@@ -601,7 +601,7 @@ const CONTENT_COLORS = [
     }
 
     .result-row .label {
-      color: var(--caris-text-secondary, #666);
+      color: var(--oc-text-secondary, #666);
     }
 
     .result-row .value {
@@ -618,7 +618,7 @@ const CONTENT_COLORS = [
     .action-btn {
       flex: 1;
       padding: 8px 12px;
-      border: 1px solid var(--caris-border-light, #ddd);
+      border: 1px solid var(--oc-border-light, #ddd);
       border-radius: 4px;
       background: white;
       font-size: 11px;
@@ -626,23 +626,23 @@ const CONTENT_COLORS = [
     }
 
     .action-btn:hover {
-      background: var(--caris-bg-subtle, #f5f5f5);
+      background: var(--oc-bg-subtle, #f5f5f5);
     }
 
     .action-btn.primary {
-      background: var(--caris-primary, #1976d2);
+      background: var(--oc-primary, #1976d2);
       color: white;
-      border-color: var(--caris-primary, #1976d2);
+      border-color: var(--oc-primary, #1976d2);
     }
 
     .action-btn.primary:hover {
-      background: var(--caris-primary-dark, #1565c0);
+      background: var(--oc-primary-dark, #1565c0);
     }
 
     .empty-state {
       text-align: center;
       padding: 24px;
-      color: var(--caris-text-secondary, #999);
+      color: var(--oc-text-secondary, #999);
     }
 
     .empty-state p {
@@ -652,7 +652,7 @@ const CONTENT_COLORS = [
 
     .empty-state .hint {
       font-size: 11px;
-      color: var(--caris-text-tertiary, #bbb);
+      color: var(--oc-text-tertiary, #bbb);
     }
   `]
 })

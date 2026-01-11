@@ -4,10 +4,10 @@ import { ModelStateService } from './services/model-state.service';
 import { OrcaFlexApiService } from './services/orcaflex-api.service';
 
 /**
- * CarisModule interface implementation for OrcaFlex Riser Module.
- * This is the entry point that CARIS Pro uses to load and manage the module.
+ * OcModule interface implementation for OrcaFlex Riser Module.
+ * This is the entry point that Offshore Constructor uses to load and manage the module.
  */
-export interface CarisModuleContext {
+export interface OcModuleContext {
   injector: Injector;
   environmentInjector: EnvironmentInjector;
   applicationRef: ApplicationRef;
@@ -20,12 +20,12 @@ export interface CarisModuleContext {
   config?: Record<string, any>;
 }
 
-export interface CarisModule {
+export interface OcModule {
   readonly name: string;
   readonly version: string;
   readonly component: Type<any>;
 
-  onInit(context: CarisModuleContext): Promise<void>;
+  onInit(context: OcModuleContext): Promise<void>;
   onDestroy(): Promise<void>;
   onActivate?(): void;
   onDeactivate?(): void;
@@ -33,23 +33,23 @@ export interface CarisModule {
   onSidebarAction?(section: string, action: string): void;
 }
 
-export class OrcaFlexRiserModule implements CarisModule {
+export class OrcaFlexRiserModule implements OcModule {
   readonly name = 'orcaflex-riser-module';
   readonly version = '1.0.0';
   readonly component = OrcaFlexRiserComponent;
 
-  private context: CarisModuleContext | null = null;
+  private context: OcModuleContext | null = null;
   private modelState: ModelStateService | null = null;
   private apiService: OrcaFlexApiService | null = null;
 
-  async onInit(context: CarisModuleContext): Promise<void> {
+  async onInit(context: OcModuleContext): Promise<void> {
     this.context = context;
 
     // Get services from injector
     this.modelState = context.injector.get(ModelStateService);
     this.apiService = context.injector.get(OrcaFlexApiService);
 
-    // Initialize API service with CARIS API
+    // Initialize API service with OC API
     this.apiService.setApiService(context.services.api);
 
     // Apply module configuration
@@ -128,7 +128,7 @@ export class OrcaFlexRiserModule implements CarisModule {
         break;
 
       case 'openDocs':
-        window.open('https://docs.carispro.com/modules/orcaflex-riser', '_blank');
+        window.open('https://docs.offshoreconstructor.com/modules/orcaflex-riser', '_blank');
         break;
 
       case 'showAbout':
@@ -266,7 +266,7 @@ Automated OrcaFlex model generation for riser analysis.
 Provides interactive 3D visualization, parameter-driven input,
 goal-seeking calculations, and direct export to OrcaFlex YAML format.
 
-© 2024 CARIS Pro. All rights reserved.
+© 2024 Offshore Constructor. All rights reserved.
       `.trim(),
     });
   }

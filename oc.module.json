@@ -4,11 +4,11 @@
   "version": "1.0.0",
   "description": "Automated OrcaFlex model generation for riser analysis. Provides interactive 3D visualization, parameter-driven input, goal-seeking calculations, and direct export to OrcaFlex YAML format.",
   "author": {
-    "name": "CARIS Pro",
-    "email": "support@carispro.com"
+    "name": "Offshore Constructor",
+    "email": "support@offshoreconstructor.com"
   },
   "license": "Proprietary",
-  "carisVersion": ">=2.0.0",
+  "ocVersion": ">=2.0.0",
   "category": "analysis",
   "tags": ["riser", "orcaflex", "analysis", "3d", "catenary", "lazy-wave"],
   "icon": "./assets/icon.png",

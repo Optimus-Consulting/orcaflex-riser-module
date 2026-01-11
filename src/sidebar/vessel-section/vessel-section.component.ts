@@ -189,7 +189,7 @@ import { ConnectionPointsImportDialogComponent } from './connection-points-impor
     .toolbar-btn {
       flex: 1;
       padding: 6px 12px;
-      border: 1px solid var(--caris-border-light, #ddd);
+      border: 1px solid var(--oc-border-light, #ddd);
       border-radius: 4px;
       background: white;
       font-size: 11px;
@@ -201,8 +201,8 @@ import { ConnectionPointsImportDialogComponent } from './connection-points-impor
     }
 
     .toolbar-btn:hover {
-      background: var(--caris-bg-subtle, #f5f5f5);
-      border-color: var(--caris-primary, #1976d2);
+      background: var(--oc-bg-subtle, #f5f5f5);
+      border-color: var(--oc-primary, #1976d2);
     }
 
     .toolbar-btn .icon {
@@ -210,7 +210,7 @@ import { ConnectionPointsImportDialogComponent } from './connection-points-impor
     }
 
     .vessel-item {
-      border: 1px solid var(--caris-border-light, #ddd);
+      border: 1px solid var(--oc-border-light, #ddd);
       border-radius: 4px;
       margin-bottom: 8px;
       cursor: pointer;
@@ -219,12 +219,12 @@ import { ConnectionPointsImportDialogComponent } from './connection-points-impor
     }
 
     .vessel-item:hover {
-      border-color: var(--caris-primary, #1976d2);
+      border-color: var(--oc-primary, #1976d2);
     }
 
     .vessel-item.selected {
-      border-color: var(--caris-primary, #1976d2);
-      background: var(--caris-bg-selected, #e3f2fd);
+      border-color: var(--oc-primary, #1976d2);
+      background: var(--oc-bg-selected, #e3f2fd);
     }
 
     .vessel-header {
@@ -244,7 +244,7 @@ import { ConnectionPointsImportDialogComponent } from './connection-points-impor
       height: 20px;
       border: none;
       background: transparent;
-      color: var(--caris-text-secondary, #999);
+      color: var(--oc-text-secondary, #999);
       font-size: 16px;
       cursor: pointer;
       border-radius: 3px;
@@ -252,19 +252,19 @@ import { ConnectionPointsImportDialogComponent } from './connection-points-impor
 
     .delete-btn:hover {
       background: #ffebee;
-      color: var(--caris-error, #f44336);
+      color: var(--oc-error, #f44336);
     }
 
     .vessel-dims {
       padding: 0 12px 8px;
       font-size: 11px;
-      color: var(--caris-text-secondary, #666);
+      color: var(--oc-text-secondary, #666);
     }
 
     .vessel-details {
       padding: 12px;
-      border-top: 1px solid var(--caris-border-light, #eee);
-      background: var(--caris-bg-subtle, #fafafa);
+      border-top: 1px solid var(--oc-border-light, #eee);
+      background: var(--oc-bg-subtle, #fafafa);
     }
 
     .form-group {
@@ -274,14 +274,14 @@ import { ConnectionPointsImportDialogComponent } from './connection-points-impor
     .form-group label {
       display: block;
       font-size: 10px;
-      color: var(--caris-text-secondary, #666);
+      color: var(--oc-text-secondary, #666);
       margin-bottom: 2px;
     }
 
     .form-group input {
       width: 100%;
       padding: 5px 6px;
-      border: 1px solid var(--caris-border-light, #ddd);
+      border: 1px solid var(--oc-border-light, #ddd);
       border-radius: 4px;
       font-size: 12px;
       background: white;
@@ -289,7 +289,7 @@ import { ConnectionPointsImportDialogComponent } from './connection-points-impor
 
     .form-group input:focus {
       outline: none;
-      border-color: var(--caris-primary, #1976d2);
+      border-color: var(--oc-primary, #1976d2);
     }
 
     .form-row {
@@ -305,16 +305,16 @@ import { ConnectionPointsImportDialogComponent } from './connection-points-impor
       font-size: 10px;
       font-weight: 600;
       text-transform: uppercase;
-      color: var(--caris-text-secondary, #666);
+      color: var(--oc-text-secondary, #666);
       margin: 12px 0 6px 0;
       padding-top: 8px;
-      border-top: 1px solid var(--caris-border-light, #eee);
+      border-top: 1px solid var(--oc-border-light, #eee);
     }
 
     .connection-points {
       margin-top: 12px;
       padding-top: 8px;
-      border-top: 1px solid var(--caris-border-light, #eee);
+      border-top: 1px solid var(--oc-border-light, #eee);
     }
 
     .cp-header {
@@ -324,7 +324,7 @@ import { ConnectionPointsImportDialogComponent } from './connection-points-impor
       font-size: 10px;
       font-weight: 600;
       text-transform: uppercase;
-      color: var(--caris-text-secondary, #666);
+      color: var(--oc-text-secondary, #666);
       margin-bottom: 8px;
     }
 
@@ -336,10 +336,10 @@ import { ConnectionPointsImportDialogComponent } from './connection-points-impor
 
     .import-cp-btn {
       padding: 2px 6px;
-      border: 1px solid var(--caris-primary, #1976d2);
+      border: 1px solid var(--oc-primary, #1976d2);
       border-radius: 3px;
       background: transparent;
-      color: var(--caris-primary, #1976d2);
+      color: var(--oc-primary, #1976d2);
       font-size: 9px;
       cursor: pointer;
       text-transform: none;
@@ -347,24 +347,24 @@ import { ConnectionPointsImportDialogComponent } from './connection-points-impor
     }
 
     .import-cp-btn:hover {
-      background: var(--caris-primary, #1976d2);
+      background: var(--oc-primary, #1976d2);
       color: white;
     }
 
     .add-cp-btn {
       width: 20px;
       height: 20px;
-      border: 1px dashed var(--caris-border-light, #ddd);
+      border: 1px dashed var(--oc-border-light, #ddd);
       border-radius: 3px;
       background: transparent;
-      color: var(--caris-text-secondary, #666);
+      color: var(--oc-text-secondary, #666);
       font-size: 14px;
       cursor: pointer;
     }
 
     .add-cp-btn:hover {
-      border-color: var(--caris-primary, #1976d2);
-      color: var(--caris-primary, #1976d2);
+      border-color: var(--oc-primary, #1976d2);
+      color: var(--oc-primary, #1976d2);
     }
 
     .cp-row {
@@ -385,14 +385,14 @@ import { ConnectionPointsImportDialogComponent } from './connection-points-impor
     }
 
     .cp-coords {
-      color: var(--caris-text-secondary, #666);
+      color: var(--oc-text-secondary, #666);
       font-family: monospace;
       font-size: 10px;
     }
 
     .cp-input {
       padding: 3px 4px;
-      border: 1px solid var(--caris-border-light, #ddd);
+      border: 1px solid var(--oc-border-light, #ddd);
       border-radius: 3px;
       font-size: 10px;
     }
@@ -419,28 +419,28 @@ import { ConnectionPointsImportDialogComponent } from './connection-points-impor
     }
 
     .icon-btn:hover {
-      background: var(--caris-bg-hover, #f0f0f0);
+      background: var(--oc-bg-hover, #f0f0f0);
     }
 
     .icon-btn.edit {
-      color: var(--caris-primary, #1976d2);
+      color: var(--oc-primary, #1976d2);
     }
 
     .icon-btn.delete {
-      color: var(--caris-error, #f44336);
+      color: var(--oc-error, #f44336);
     }
 
     .icon-btn.save {
-      color: var(--caris-success, #4caf50);
+      color: var(--oc-success, #4caf50);
     }
 
     .icon-btn.cancel {
-      color: var(--caris-text-secondary, #666);
+      color: var(--oc-text-secondary, #666);
     }
 
     .no-cp {
       font-size: 11px;
-      color: var(--caris-text-tertiary, #999);
+      color: var(--oc-text-tertiary, #999);
       font-style: italic;
       padding: 4px 0;
     }
@@ -448,7 +448,7 @@ import { ConnectionPointsImportDialogComponent } from './connection-points-impor
     .empty-state {
       text-align: center;
       padding: 24px;
-      color: var(--caris-text-secondary, #999);
+      color: var(--oc-text-secondary, #999);
     }
 
     .empty-state p {
@@ -458,16 +458,16 @@ import { ConnectionPointsImportDialogComponent } from './connection-points-impor
 
     .empty-state .hint {
       font-size: 11px;
-      color: var(--caris-text-tertiary, #bbb);
+      color: var(--oc-text-tertiary, #bbb);
     }
 
     .import-status {
       text-align: center;
       padding: 8px;
-      background: var(--caris-bg-subtle, #f5f5f5);
+      background: var(--oc-bg-subtle, #f5f5f5);
       border-radius: 4px;
       font-size: 11px;
-      color: var(--caris-text-secondary, #666);
+      color: var(--oc-text-secondary, #666);
     }
   `]
 })

@@ -326,12 +326,12 @@ import { BuoyancyModulesImportDialogComponent } from './buoyancy-modules-import-
       justify-content: space-between;
       align-items: center;
       padding: 8px 12px;
-      background: var(--caris-bg-subtle, #f5f5f5);
-      border-bottom: 1px solid var(--caris-border-light, #eee);
+      background: var(--oc-bg-subtle, #f5f5f5);
+      border-bottom: 1px solid var(--oc-border-light, #eee);
       font-size: 10px;
       font-weight: 600;
       text-transform: uppercase;
-      color: var(--caris-text-secondary, #666);
+      color: var(--oc-text-secondary, #666);
     }
 
     .subsection-header.buoyancy {
@@ -346,10 +346,10 @@ import { BuoyancyModulesImportDialogComponent } from './buoyancy-modules-import-
 
     .import-btn {
       padding: 2px 6px;
-      border: 1px solid var(--caris-primary, #1976d2);
+      border: 1px solid var(--oc-primary, #1976d2);
       border-radius: 3px;
       background: transparent;
-      color: var(--caris-primary, #1976d2);
+      color: var(--oc-primary, #1976d2);
       font-size: 9px;
       cursor: pointer;
       text-transform: none;
@@ -357,7 +357,7 @@ import { BuoyancyModulesImportDialogComponent } from './buoyancy-modules-import-
     }
 
     .import-btn:hover {
-      background: var(--caris-primary, #1976d2);
+      background: var(--oc-primary, #1976d2);
       color: white;
     }
 
@@ -365,10 +365,10 @@ import { BuoyancyModulesImportDialogComponent } from './buoyancy-modules-import-
       font-size: 10px;
       font-weight: 600;
       text-transform: uppercase;
-      color: var(--caris-text-secondary, #666);
+      color: var(--oc-text-secondary, #666);
       margin: 12px 0 8px;
       padding-top: 8px;
-      border-top: 1px solid var(--caris-border-light, #eee);
+      border-top: 1px solid var(--oc-border-light, #eee);
     }
 
     .section-title:first-of-type {
@@ -380,23 +380,23 @@ import { BuoyancyModulesImportDialogComponent } from './buoyancy-modules-import-
     .add-btn {
       width: 20px;
       height: 20px;
-      border: 1px dashed var(--caris-border-light, #ccc);
+      border: 1px dashed var(--oc-border-light, #ccc);
       border-radius: 3px;
       background: transparent;
-      color: var(--caris-text-secondary, #666);
+      color: var(--oc-text-secondary, #666);
       font-size: 14px;
       cursor: pointer;
     }
 
     .add-btn:hover {
-      border-color: var(--caris-primary, #1976d2);
-      color: var(--caris-primary, #1976d2);
+      border-color: var(--oc-primary, #1976d2);
+      color: var(--oc-primary, #1976d2);
     }
 
     .line-type-item,
     .buoyancy-item {
       margin: 8px;
-      border: 1px solid var(--caris-border-light, #ddd);
+      border: 1px solid var(--oc-border-light, #ddd);
       border-radius: 4px;
       overflow: hidden;
       cursor: pointer;
@@ -404,13 +404,13 @@ import { BuoyancyModulesImportDialogComponent } from './buoyancy-modules-import-
 
     .line-type-item:hover,
     .buoyancy-item:hover {
-      border-color: var(--caris-primary, #1976d2);
+      border-color: var(--oc-primary, #1976d2);
     }
 
     .line-type-item.selected,
     .buoyancy-item.selected {
-      border-color: var(--caris-primary, #1976d2);
-      background: var(--caris-bg-selected, #e3f2fd);
+      border-color: var(--oc-primary, #1976d2);
+      background: var(--oc-bg-selected, #e3f2fd);
     }
 
     .line-type-item.new-item,
@@ -437,7 +437,7 @@ import { BuoyancyModulesImportDialogComponent } from './buoyancy-modules-import-
     .buoyancy-summary {
       padding: 0 12px 8px;
       font-size: 11px;
-      color: var(--caris-text-secondary, #666);
+      color: var(--oc-text-secondary, #666);
     }
 
     .delete-btn {
@@ -445,7 +445,7 @@ import { BuoyancyModulesImportDialogComponent } from './buoyancy-modules-import-
       height: 20px;
       border: none;
       background: transparent;
-      color: var(--caris-text-secondary, #999);
+      color: var(--oc-text-secondary, #999);
       font-size: 16px;
       cursor: pointer;
       border-radius: 3px;
@@ -453,7 +453,7 @@ import { BuoyancyModulesImportDialogComponent } from './buoyancy-modules-import-
 
     .delete-btn:hover {
       background: #ffebee;
-      color: var(--caris-error, #f44336);
+      color: var(--oc-error, #f44336);
     }
 
     .delete-btn.small {
@@ -465,8 +465,8 @@ import { BuoyancyModulesImportDialogComponent } from './buoyancy-modules-import-
     .line-type-editor,
     .buoyancy-editor {
       padding: 12px;
-      border-top: 1px solid var(--caris-border-light, #eee);
-      background: var(--caris-bg-subtle, #fafafa);
+      border-top: 1px solid var(--oc-border-light, #eee);
+      background: var(--oc-bg-subtle, #fafafa);
     }
 
     .form-group {
@@ -480,14 +480,14 @@ import { BuoyancyModulesImportDialogComponent } from './buoyancy-modules-import-
     .form-group label {
       display: block;
       font-size: 10px;
-      color: var(--caris-text-secondary, #666);
+      color: var(--oc-text-secondary, #666);
       margin-bottom: 2px;
     }
 
     .form-group input {
       width: 100%;
       padding: 5px 6px;
-      border: 1px solid var(--caris-border-light, #ddd);
+      border: 1px solid var(--oc-border-light, #ddd);
       border-radius: 4px;
       font-size: 11px;
       background: white;
@@ -495,17 +495,17 @@ import { BuoyancyModulesImportDialogComponent } from './buoyancy-modules-import-
 
     .form-group input:focus {
       outline: none;
-      border-color: var(--caris-primary, #1976d2);
+      border-color: var(--oc-primary, #1976d2);
     }
 
     .form-group input.calculated-input {
-      background: var(--caris-bg-subtle, #f9f9f9);
+      background: var(--oc-bg-subtle, #f9f9f9);
     }
 
     .calc-hint {
       display: block;
       font-size: 9px;
-      color: var(--caris-text-tertiary, #999);
+      color: var(--oc-text-tertiary, #999);
       margin-top: 2px;
       font-style: italic;
     }
@@ -534,23 +534,23 @@ import { BuoyancyModulesImportDialogComponent } from './buoyancy-modules-import-
     }
 
     .btn.save {
-      background: var(--caris-primary, #1976d2);
+      background: var(--oc-primary, #1976d2);
       color: white;
       border: none;
     }
 
     .btn.save:hover {
-      background: var(--caris-primary-dark, #1565c0);
+      background: var(--oc-primary-dark, #1565c0);
     }
 
     .btn.cancel {
       background: white;
-      border: 1px solid var(--caris-border-light, #ddd);
-      color: var(--caris-text-secondary, #666);
+      border: 1px solid var(--oc-border-light, #ddd);
+      color: var(--oc-text-secondary, #666);
     }
 
     .btn.cancel:hover {
-      background: var(--caris-bg-subtle, #f5f5f5);
+      background: var(--oc-bg-subtle, #f5f5f5);
     }
   `]
 })

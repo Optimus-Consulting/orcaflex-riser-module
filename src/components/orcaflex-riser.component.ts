@@ -146,24 +146,24 @@ import { RiserConfig, CatenaryRequest, LazyWaveRequest, calculateEffectiveWeight
     .orcaflex-workspace {
       display: flex;
       height: 100%;
-      background: var(--caris-bg-workspace, #f5f5f5);
+      background: var(--oc-bg-workspace, #f5f5f5);
     }
 
     .sidebar {
       width: 280px;
-      background: var(--caris-bg-sidebar, #fff);
-      border-right: 1px solid var(--caris-border-light, #e0e0e0);
+      background: var(--oc-bg-sidebar, #fff);
+      border-right: 1px solid var(--oc-border-light, #e0e0e0);
       overflow-y: auto;
       flex-shrink: 0;
     }
 
     .sidebar.right {
       border-right: none;
-      border-left: 1px solid var(--caris-border-light, #e0e0e0);
+      border-left: 1px solid var(--oc-border-light, #e0e0e0);
     }
 
     .sidebar-section {
-      border-bottom: 1px solid var(--caris-border-light, #e0e0e0);
+      border-bottom: 1px solid var(--oc-border-light, #e0e0e0);
     }
 
     .section-header {
@@ -171,24 +171,24 @@ import { RiserConfig, CatenaryRequest, LazyWaveRequest, calculateEffectiveWeight
       justify-content: space-between;
       align-items: center;
       padding: 12px 16px;
-      background: var(--caris-bg-section-header, #fafafa);
+      background: var(--oc-bg-section-header, #fafafa);
       cursor: pointer;
       user-select: none;
     }
 
     .section-header:hover {
-      background: var(--caris-bg-hover, #f0f0f0);
+      background: var(--oc-bg-hover, #f0f0f0);
     }
 
     .section-title {
       font-size: 12px;
       font-weight: 600;
       text-transform: uppercase;
-      color: var(--caris-text-secondary, #666);
+      color: var(--oc-text-secondary, #666);
     }
 
     .toggle-icon {
-      color: var(--caris-text-tertiary, #999);
+      color: var(--oc-text-tertiary, #999);
       font-weight: bold;
     }
 
@@ -209,8 +209,8 @@ import { RiserConfig, CatenaryRequest, LazyWaveRequest, calculateEffectiveWeight
       justify-content: space-between;
       align-items: center;
       padding: 8px 16px;
-      background: var(--caris-bg-statusbar, #263238);
-      color: var(--caris-text-statusbar, #b0bec5);
+      background: var(--oc-bg-statusbar, #263238);
+      color: var(--oc-text-statusbar, #b0bec5);
       font-size: 11px;
     }
 
@@ -231,11 +231,11 @@ import { RiserConfig, CatenaryRequest, LazyWaveRequest, calculateEffectiveWeight
     }
 
     .status-item.calculating {
-      color: var(--caris-warning, #ffc107);
+      color: var(--oc-warning, #ffc107);
     }
 
     .status-item.modified {
-      color: var(--caris-accent, #ff9800);
+      color: var(--oc-accent, #ff9800);
     }
 
     .generate-btn {

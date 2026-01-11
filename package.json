@@ -1,7 +1,7 @@
 {
   "name": "orcaflex-riser-module",
   "version": "1.0.0",
-  "description": "OrcaFlex Riser Analysis module for CARIS Pro",
+  "description": "OrcaFlex Riser Analysis module for Offshore Constructor",
   "main": "dist/remoteEntry.js",
   "scripts": {
     "start": "webpack serve --mode development --port 4202",
@@ -46,13 +46,14 @@
     "webpack-dev-server": "^5.0.0"
   },
   "keywords": [
-    "caris",
+    "oc",
+    "offshore-constructor",
     "orcaflex",
     "riser",
     "analysis",
     "offshore",
     "module"
   ],
-  "author": "CARIS Pro",
+  "author": "Offshore Constructor",
   "license": "Proprietary"
 }

@@ -155,9 +155,9 @@ import * as THREE from 'three';
     }
 
     .view-controls button.active {
-      background: var(--caris-primary, #1976d2);
+      background: var(--oc-primary, #1976d2);
       color: white;
-      border-color: var(--caris-primary, #1976d2);
+      border-color: var(--oc-primary, #1976d2);
     }
 
     .dropdown {

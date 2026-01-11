@@ -46,14 +46,14 @@ import { ModelStateService } from '../../services/model-state.service';
     .clear-btn {
       padding: 4px 8px;
       font-size: 11px;
-      border: 1px solid var(--caris-border-light, #ddd);
+      border: 1px solid var(--oc-border-light, #ddd);
       border-radius: 4px;
       background: white;
       cursor: pointer;
     }
 
     .clear-btn:hover:not(:disabled) {
-      background: var(--caris-bg-subtle, #f5f5f5);
+      background: var(--oc-bg-subtle, #f5f5f5);
     }
 
     .clear-btn:disabled {
@@ -64,14 +64,14 @@ import { ModelStateService } from '../../services/model-state.service';
     .logs-container {
       max-height: 300px;
       overflow-y: auto;
-      border: 1px solid var(--caris-border-light, #eee);
+      border: 1px solid var(--oc-border-light, #eee);
       border-radius: 4px;
-      background: var(--caris-bg-subtle, #fafafa);
+      background: var(--oc-bg-subtle, #fafafa);
     }
 
     .log-entry {
       padding: 6px 8px;
-      border-bottom: 1px solid var(--caris-border-light, #eee);
+      border-bottom: 1px solid var(--oc-border-light, #eee);
       font-size: 11px;
       font-family: monospace;
     }
@@ -81,7 +81,7 @@ import { ModelStateService } from '../../services/model-state.service';
     }
 
     .timestamp {
-      color: var(--caris-text-tertiary, #999);
+      color: var(--oc-text-tertiary, #999);
       margin-right: 8px;
     }
 
@@ -115,7 +115,7 @@ import { ModelStateService } from '../../services/model-state.service';
     }
 
     .message {
-      color: var(--caris-text-primary, #333);
+      color: var(--oc-text-primary, #333);
     }
 
     .details {
@@ -123,7 +123,7 @@ import { ModelStateService } from '../../services/model-state.service';
       padding: 4px 8px;
       background: rgba(0,0,0,0.03);
       border-radius: 2px;
-      color: var(--caris-text-secondary, #666);
+      color: var(--oc-text-secondary, #666);
       white-space: pre-wrap;
       word-break: break-all;
     }
@@ -131,7 +131,7 @@ import { ModelStateService } from '../../services/model-state.service';
     .empty-state {
       padding: 20px;
       text-align: center;
-      color: var(--caris-text-tertiary, #bbb);
+      color: var(--oc-text-tertiary, #bbb);
       font-size: 12px;
     }
   `]
