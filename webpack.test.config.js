@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { AngularWebpackPlugin } = require('@ngtools/webpack');
 
 module.exports = {
   entry: './test/bootstrap.ts',
@@ -19,13 +20,26 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.ts$/,
-        use: 'ts-loader',
+        test: /\.[jt]sx?$/,
+        loader: '@ngtools/webpack',
         exclude: /node_modules/,
+      },
+      {
+        test: /\.css$/,
+        use: ['to-string-loader', 'css-loader'],
+      },
+      {
+        test: /\.scss$/,
+        use: ['to-string-loader', 'css-loader', 'sass-loader'],
       },
     ],
   },
   plugins: [
+    new AngularWebpackPlugin({
+      tsconfig: './tsconfig.json',
+      jitMode: true, // Use JIT for faster dev builds
+      directTemplateLoading: true,
+    }),
     new HtmlWebpackPlugin({
       template: './test/index.html',
     }),
@@ -34,10 +48,13 @@ module.exports = {
     port: 4203,
     hot: true,
     open: true,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
     proxy: [
       {
         context: ['/api'],
-        target: 'http://localhost:8001',
+        target: 'http://localhost:8000',
         changeOrigin: true,
       },
     ],
