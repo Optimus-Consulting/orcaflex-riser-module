@@ -51,6 +51,12 @@ module.exports = {
     headers: {
       'Access-Control-Allow-Origin': '*',
     },
+    client: {
+      overlay: {
+        errors: true,
+        warnings: false,  // Don't show warnings in overlay
+      },
+    },
     proxy: [
       {
         context: ['/api'],
